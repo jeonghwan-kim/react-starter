@@ -18,3 +18,6 @@ sass
 
 test
 - [] jest
+
+api 
+- [x] class

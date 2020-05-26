@@ -17,14 +17,21 @@ module.exports = {
   },
   devServer: {
     contentBase: "./dist",
-    historyApiFallback: {
-      disableDotRule: true,
-    },
+    // historyApiFallback: {
+    //   disableDotRule: true,
+    // },
     overlay: true,
     stats: "errors-only",
     publicPath: "/",
     open: true,
     hot: true,
+    before: (app) => {
+      app.get("/api/profile", (req, res) => {
+        setTimeout(() => {
+          res.json({ id: 1, name: "user1" });
+        }, 200);
+      });
+    },
   },
   module: {
     rules: [
