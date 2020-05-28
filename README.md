@@ -17,7 +17,7 @@ sass
 - [x] sass-loader
 
 test
-- [] jest
+- [x] jest
 
 api 
 - [x] class

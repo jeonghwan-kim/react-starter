@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "",
+    "test": "jest ./src/**/*.test.js",
     "start": "webpack-dev-server --progress",
     "build": "webpack --progress",
     "lint": "eslint --fix ./src/**/*.{js,jsx}"
@@ -25,6 +25,7 @@
     "eslint-plugin-react": "^7.20.0",
     "html-webpack-plugin": "^4.3.0",
     "husky": "^4.2.5",
+    "jest": "^26.0.1",
     "lint-staged": "^10.2.6",
     "node-sass": "^4.14.1",
     "prettier": "^2.0.5",
@@ -44,7 +45,10 @@
     }
   },
   "lint-staged": {
-    "*.{js,jsx}": "eslint --fix"
+    "*.{js,jsx}": [
+      "eslint --fix",
+      "git-add"
+    ]
   },
   "babel": {
     "presets": [
