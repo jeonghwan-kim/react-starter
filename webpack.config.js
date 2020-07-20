@@ -5,7 +5,7 @@ const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 module.exports = {
   mode: "development",
   entry: {
-    main: "./src/index.js",
+    main: "./src/frontend/index.tsx",
   },
   output: {
     filename: "[name].js",
@@ -13,7 +13,8 @@ module.exports = {
     publicPath: "/",
   },
   resolve: {
-    extensions: [".js", ".jsx"],
+    // 파일 확장자 처리
+    extensions: [".ts", ".tsx", ".js"],
   },
   devServer: {
     contentBase: "./dist",
@@ -36,7 +37,7 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /.jsx?$/,
+        test: /.tsx?$/,
         exclude: /node_modules/,
         loader: "babel-loader",
       },

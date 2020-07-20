@@ -1,0 +1,29 @@
+{
+	"compilerOptions": {
+		"target": "es5",
+		"lib": ["es6", "dom", "es2017"],
+		"allowJs": true,
+		"skipLibCheck": true,
+		"esModuleInterop": true,
+		"allowSyntheticDefaultImports": true,
+		"experimentalDecorators": true,
+		"importHelpers": true,
+		"strict": false,
+		"outDir": "build",
+		"forceConsistentCasingInFileNames": true,
+		"module": "esnext", // 웹팩 다이나믹 임포트 사용하기 위함 
+		"moduleResolution": "node",
+		"resolveJsonModule": true,
+		"isolatedModules": false,
+		//    "noEmit": true,
+		"jsx": "react",
+		"sourceMap": true,
+		"noImplicitAny": true,
+		"strictNullChecks": true,
+		"typeRoots": ["node_modules/@types", "./src/typings"],
+		"baseUrl": "./src"
+	},
+	"include": [
+		"src/frontend"
+	],
+}

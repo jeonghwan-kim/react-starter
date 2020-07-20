@@ -1,5 +1,8 @@
 export default class User {
-  constructor(row = {}) {
+  id: number;
+  name: string;
+  
+  constructor(row: any = {}) {
     this.id = row.id || 0;
     this.name = row.name || "";
   }

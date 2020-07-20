@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "jest ./src/**/*.test.js",
+    "test": "jest ./src/**/*.test.ts",
     "start": "webpack-dev-server --progress",
     "build": "webpack --progress",
     "lint": "eslint --fix ./src/**/*.{js,jsx}"
@@ -16,6 +16,9 @@
     "@babel/core": "^7.9.6",
     "@babel/preset-env": "^7.9.6",
     "@babel/preset-react": "^7.9.4",
+    "@babel/preset-typescript": "^7.10.4",
+    "@types/react": "^16.9.43",
+    "@types/react-dom": "^16.9.8",
     "babel-loader": "^8.1.0",
     "clean-webpack-plugin": "^3.0.0",
     "css-loader": "^3.5.3",
@@ -37,7 +40,8 @@
   },
   "dependencies": {
     "react": "^16.13.1",
-    "react-dom": "^16.13.1"
+    "react-dom": "^16.13.1",
+    "typescript": "^3.9.7"
   },
   "husky": {
     "hooks": {
@@ -48,23 +52,6 @@
     "*.{js,jsx}": [
       "eslint --fix",
       "git-add"
-    ]
-  },
-  "babel": {
-    "presets": [
-      [
-        "@babel/preset-react"
-      ],
-      [
-        "@babel/preset-env",
-        {
-          "targets": {
-            "browsers": [
-              "last 2 chrome versions"
-            ]
-          }
-        }
-      ]
     ]
   }
 }

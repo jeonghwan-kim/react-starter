@@ -1,15 +1,22 @@
 import React from "react";
 import UserApi from "./apis/UserApi";
 import "./App.scss";
+import User from "./models/User";
 
-export default class App extends React.Component {
-  constructor() {
-    super();
+interface P { }
+interface S {
+  user?: User
+}
+
+export default class App extends React.Component<P, S> {
+  constructor(p: P) {
+    super(p);
 
     this.state = {
-      user: null,
+      user: undefined,
     };
   }
+
   async componentDidMount() {
     const user = await UserApi.get();
     this.setState({ user });
