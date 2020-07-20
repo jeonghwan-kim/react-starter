@@ -26,7 +26,7 @@ export default class App extends React.Component<P, S> {
     return (
       <div className="App">
         <h2>App</h2>
-        {!this.state.user && <div>Loading...</div>}
+        {!this.state.user && <div>Loading.......</div>}
         {this.state.user && (
           <>
             <div>id: {this.state.user.id}</div>

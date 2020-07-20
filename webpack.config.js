@@ -1,38 +1,23 @@
 const path = require("path");
-const HtmlWebpackPlugin = require("html-webpack-plugin");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 
 module.exports = {
   mode: "development",
   entry: {
-    main: "./src/frontend/index.tsx",
+    main: "./src/frontend",
   },
   output: {
     filename: "[name].js",
-    path: path.resolve(__dirname, "./dist"),
-    publicPath: "/",
+    path: path.resolve(__dirname, "public/dist"),
   },
   resolve: {
     // 파일 확장자 처리
     extensions: [".ts", ".tsx", ".js"],
   },
-  devServer: {
-    contentBase: "./dist",
-    // historyApiFallback: {
-    //   disableDotRule: true,
-    // },
-    overlay: true,
-    stats: "errors-only",
-    publicPath: "/",
-    open: true,
-    hot: true,
-    before: (app) => {
-      app.get("/api/profile", (req, res) => {
-        setTimeout(() => {
-          res.json({ id: 1, name: "user1" });
-        }, 200);
-      });
-    },
+  // todo: watch 옵션 동작 안함
+  watch: true,
+  watchOptions: {
+    ignored: [/node_modules/, /(?!src\/frontend\/.*)/, "src/index.tsx"],
   },
   module: {
     rules: [
@@ -48,10 +33,5 @@ module.exports = {
       },
     ],
   },
-  plugins: [
-    new CleanWebpackPlugin(),
-    new HtmlWebpackPlugin({
-      template: "./src/index.html",
-    }),
-  ],
+  plugins: [new CleanWebpackPlugin()],
 };

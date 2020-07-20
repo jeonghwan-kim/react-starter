@@ -11,7 +11,7 @@
 		"strict": false,
 		"outDir": "build",
 		"forceConsistentCasingInFileNames": true,
-		"module": "esnext", // 웹팩 다이나믹 임포트 사용하기 위함 
+		"module": "commonjs",
 		"moduleResolution": "node",
 		"resolveJsonModule": true,
 		"isolatedModules": false,
