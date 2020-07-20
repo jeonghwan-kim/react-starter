@@ -11,13 +11,7 @@ module.exports = {
     path: path.resolve(__dirname, "public/dist"),
   },
   resolve: {
-    // 파일 확장자 처리
     extensions: [".ts", ".tsx", ".js"],
-  },
-  // todo: watch 옵션 동작 안함
-  watch: true,
-  watchOptions: {
-    ignored: [/node_modules/, /(?!src\/frontend\/.*)/, "src/index.tsx"],
   },
   module: {
     rules: [
